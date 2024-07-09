@@ -166,20 +166,22 @@
                 const gallery = document.getElementById(galleryId);
                 const slides = gallery.querySelector('.slides');
                 const totalSlides = slides.children.length;
-                let currentSlide = gallery.getAttribute('data-current-slide') || 0;
-                currentSlide = parseInt(currentSlide) + direction;
-        
+                let currentSlide = parseInt(gallery.getAttribute('data-current-slide')) || 0;
+                
+                currentSlide += direction;
+                
                 if (currentSlide < 0) {
                     currentSlide = totalSlides - 1;
                 } else if (currentSlide >= totalSlides) {
                     currentSlide = 0;
                 }
-        
+                
                 const slideWidth = slides.children[0].clientWidth;
                 slides.style.transform = `translateX(${-slideWidth * currentSlide}px)`;
                 gallery.setAttribute('data-current-slide', currentSlide);
             }
         </script>
+        
     </section>
 
     <footer class="page_footer">
