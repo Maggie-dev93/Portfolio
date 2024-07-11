@@ -390,3 +390,34 @@ button:focus,
 .image-container img:hover {
   transform: scale(1.1); /* Optional: Increase size on hover */
 }
+
+.contact_methods {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.contact_item a {
+  text-decoration: none;
+}
+
+.contact_item a:hover {
+  text-decoration: underline;
+}
+
+@media (min-width: 600px) {
+  .contact_methods {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .contact_item::after {
+    content: '|';
+    margin: 0 10px;
+  }
+
+  .contact_item:last-child::after {
+    content: '';
+  }
+}
